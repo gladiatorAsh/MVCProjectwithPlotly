@@ -1,0 +1,71 @@
+﻿@model Dummy.Models.Graph
+
+@{
+    ViewBag.Title = "Data";
+}
+
+<h3>Please enter starting point along with additional ten points</h3>
+
+
+<div class="row">
+    <div>
+        <div class="col-xs-3">
+            Name of Point
+        </div>
+    </div>
+    <div>
+        <div class="col-xs-3">
+            X-Coordinate or Abscissa
+        </div>
+    </div>
+    <div>
+        <div class="col-xs-3">
+            Y-Coordinate or Ordinate
+        </div>
+    </div>
+
+    <p>
+        <hr />
+    </p>
+</div>
+
+@using (Html.BeginForm("Calculate", "Home"))
+{
+    @Html.AntiForgeryToken()
+
+    for (int i = 0; i < Model.points.Count; i++)
+    {
+        <div class="editrow row">
+            <div class="edititem form-group">
+                <div class="editor-field col-xs-3">
+                    @Html.TextBoxFor(m => m.points[i].Name)
+                    @Html.ValidationMessageFor(m => m.points[i].Name)
+                </div>
+            </div>
+            <div class="edititem">
+                <div class="editor-field col-xs-3">
+                    @Html.TextBoxFor(m => m.points[i].X)
+                    @Html.ValidationMessageFor(m => m.points[i].X)
+                </div>
+            </div>
+            <div class="edititem">
+                <div class="editor-field col-xs-3">
+                    @Html.TextBoxFor(m => m.points[i].Y)
+                    @Html.ValidationMessageFor(m => m.points[i].Y)
+                </div>
+            </div>
+
+            <p>
+                @i
+                <hr />
+            </p>
+        </div>
+    }
+
+    <button type="submit">Calculate</button>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

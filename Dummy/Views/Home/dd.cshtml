@@ -1,0 +1,52 @@
+﻿@model Dummy.Models.Graph
+
+@{
+    ViewBag.Title = "dd";
+}
+
+<h2>dd</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    for (int i = 0; i < Model.points.Count; i++)
+    {
+        <div class="editrow">
+            <div class="edititem">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.items[i].propertyOne)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.items[i].propertyOne)
+                    @Html.ValidationMessageFor(m => m.items[i].propertyOne)
+                </div>
+            </div>
+            <div class="edititem">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.items[i].propertyTwo)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.items[i].propertyTwo)
+                    @Html.ValidationMessageFor(m => m.items[i].propertyTwo)
+                </div>
+            </div>
+            <div class="edititem">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.items[i].propertyThree)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.items[i].propertyThree)
+                    @Html.ValidationMessageFor(m => m.items[i].propertyThree)
+                </div>
+            </div>
+        </div>
+    }
+
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

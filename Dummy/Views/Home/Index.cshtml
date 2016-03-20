@@ -1,0 +1,135 @@
+﻿@model Dummy.Models.Point
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+using(@Html.BeginForm("CalculateDistances", "Home", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+
+
+<div class="row">
+    <div class="form-group">
+        <label>Starting point</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 0" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 0" value="" placeholder="y" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Label Point 0" value="" placeholder="Label" />
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group">
+        <label>Point 1</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 1" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 1" value="" placeholder="y" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Point 2</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 2" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 2" value="" placeholder="y" />
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="form-group">
+        <label>Point 3</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 3" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 3" value="" placeholder="y" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Point 4</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 4" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 4" value="" placeholder="y" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <label>Point 5</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 5" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 5" value="" placeholder="y" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Point 6</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 6" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 6" value="" placeholder="y" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <label>Point 7</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 7" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 7" value="" placeholder="y" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Point 8</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 8" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 8" value="" placeholder="y" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group">
+        <label>Point 9</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 9" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 9" value="" placeholder="y" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Point 10</label>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 10" value="" placeholder="x" />
+        </div>
+        <div class="col-xs-3">
+            <input type="number" class="form-control" name="Point 10" value="" placeholder="y" />
+        </div>
+    </div>
+</div>
+
+<div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+
+</div>
+}

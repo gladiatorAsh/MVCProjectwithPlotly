@@ -1,0 +1,149 @@
+﻿@model Dummy.Models.Graph
+
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Points displayed in order of distance to start point</h2>
+
+
+<div class="row">
+    <div>
+        <div class="col-xs-3">
+            Name of Point
+        </div>
+    </div>
+    <div>
+        <div class="col-xs-3">
+            X-Coordinate or Abscissa
+        </div>
+    </div>
+    <div>
+        <div class="col-xs-3">
+            Y-Coordinate or Ordinate
+        </div>
+    </div>
+
+    <p>
+        Rank
+        <hr />
+    </p>
+</div>
+
+@for (int i = 0; i < Model.points.Count; i++)
+{
+    <div class="editrow row">
+        <div class="edititem form-group">
+            <div class="editor-field col-xs-3">
+                @Html.ValueFor(m => m.points[i].Name)
+            </div>
+        </div>
+        <div class="edititem">
+            <div class="editor-field col-xs-3">
+                @Html.ValueFor(m => m.points[i].X)
+            </div>
+        </div>
+        <div class="edititem">
+            <div class="editor-field col-xs-3">
+                @Html.ValueFor(m => m.points[i].Y)
+            </div>
+        </div>
+
+        <p>
+            @Html.ValueFor(m => m.points[i].Rank)
+            <hr />
+        </p>
+    </div>
+}
+
+<div id="myDiv" style="width: 960px; height: 600px;"></div>
+
+@Html.ActionLink("Back", "Show")
+<script src="~/Scripts/plotly-latest.min.js"></script>
+<script>
+
+    var model =@Html.Raw(Json.Encode(Model))
+      console.log(model);
+
+    var distance1 = {
+        x: [model.points[0].X, model.points[1].X],
+        y: [model.points[0].Y, model.points[1].Y],
+        mode: 'lines+markers',
+        name: model.points[1].Name
+    }
+
+    var distance2 = {
+        x: [model.points[0].X, model.points[2].X],
+        y: [model.points[0].Y, model.points[2].Y],
+        mode: 'lines+markers',
+        name: model.points[2].Name
+    }
+    var distance3 = {
+        x: [model.points[0].X, model.points[3].X],
+        y: [model.points[0].Y, model.points[3].Y],
+        mode: 'lines+markers',
+        name: model.points[3].Name
+    }
+
+    var distance4 = {
+        x: [model.points[0].X, model.points[4].X],
+        y: [model.points[0].Y, model.points[4].Y],
+        mode: 'lines+markers',
+        name: model.points[4].Name
+    }
+
+    var distance5 = {
+        x: [model.points[0].X, model.points[5].X],
+        y: [model.points[0].Y, model.points[5].Y],
+        mode: 'lines+markers',
+        name: model.points[5].Name
+    }
+
+    var distance6 = {
+        x: [model.points[0].X, model.points[6].X],
+        y: [model.points[0].Y, model.points[6].Y],
+        mode: 'lines+markers',
+        name: model.points[6].Name
+
+    }
+    var distance7 = {
+        x: [model.points[0].X, model.points[7].X],
+        y: [model.points[0].Y, model.points[7].Y],
+        mode: 'lines+markers',
+        name: model.points[7].Name
+    }
+
+    var distance8 = {
+        x: [model.points[0].X, model.points[8].X],
+        y: [model.points[0].Y, model.points[8].Y],
+        mode: 'lines+markers',
+        name: model.points[8].Name
+    }
+
+
+    var distance9 = {
+        x: [model.points[0].X, model.points[9].X],
+        y: [model.points[0].Y, model.points[9].Y],
+        mode: 'lines+markers',
+        name: model.points[9].Name
+    }
+
+    var distance10 = {
+        x: [model.points[0].X, model.points[10].X],
+        y: [model.points[0].Y, model.points[10].Y],
+        mode: 'lines+markers',
+        name: model.points[10].Name
+    }
+
+    ;
+    var data = [distance1, distance2, distance3, distance4, distance5, distance6, distance7, distance8, distance9,
+    distance10];
+
+    var layout = {
+        title: 'Distance from Start'
+    };
+
+
+    Plotly.newPlot('myDiv', data, layout);
+
+</script>
